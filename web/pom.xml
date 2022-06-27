@@ -35,10 +35,14 @@
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger2</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.springfox</groupId>
-      <artifactId>springfox-swagger-ui</artifactId>
-    </dependency>
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>swagger-ui</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>webjars-locator-core</artifactId>
+      </dependency>
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-bean-validators</artifactId>
