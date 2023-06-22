@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740767047783">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740770732298">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -14,28 +14,28 @@
     <meta name="description" content="Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/deployment/docker/" />
+    <link rel="canonical" href="https://docs.cbioportal.org/deployment/docker/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/deployment/docker/">
+    <meta property="og:url" content="https://docs.cbioportal.org/deployment/docker/">
     <meta property="og:title" content="Deploy with Docker">
     <meta property="og:description" content="Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/deployment/docker/">
+    <meta property="twitter:url" content="https://docs.cbioportal.org/deployment/docker/">
     <meta property="twitter:title" content="Deploy with Docker">
     <meta property="twitter:description" content="Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../images/cbio-logo.png" rel="icon" />
-    <link href="../../resources/css/retype.css?v=3.0.3.740767047783" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.740770732298" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.740767047783" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.740770732298" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.740767047783" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.740770732298" data-turbo-eval="false" defer></script>
 
     <link rel="stylesheet" href="/static/custom.css"></link>
 </head>
@@ -272,12 +272,12 @@ To learn more on Docker, kindly refer here: <a href="https://docs.docker.com/eng
 <pre class="language-none"><code v-pre class="language-none">git clone https://github.com/cBioPortal/cbioportal-docker-compose.git
 cd cbioportal-docker-compose
 ./init.sh
-docker-compose up</code></pre>
+docker compose up</code></pre>
 </doc-codeblock></div>
 <p>You should now be able to see the cBioPortal website at http://localhost:8080</p>
 <p>Import studies with:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">docker-compose run cbioportal metaImport.py -u http://cbioportal:8080 -s study/lgg_ucsf_2014/ -o</code></pre>
+<pre class="language-none"><code v-pre class="language-none">docker compose run cbioportal metaImport.py -u http://cbioportal:8080 -s study/lgg_ucsf_2014/ -o</code></pre>
 </doc-codeblock></div>
 <p>Clear persistent data volumes with:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -306,7 +306,7 @@ cd cbioportal-docker-compose</code></pre>
 </doc-codeblock></div>
 <p>Then run:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">docker-compose up</code></pre>
+<pre class="language-none"><code v-pre class="language-none">docker compose up</code></pre>
 </doc-codeblock></div>
 <p>This will start all four containers (services) defined <a href="https://github.com/cBioPortal/cbioportal-docker-compose/blob/master/docker-compose.yml">here</a>. That is:</p>
 <ul>
@@ -326,7 +326,7 @@ cd cbioportal-docker-compose</code></pre>
 </doc-anchor-target>
 <p>If you prefer to run the services in detached mode (i.e. not logging everything to your terminal), you can run</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">docker-compose up -d</code></pre>
+<pre class="language-none"><code v-pre class="language-none">docker compose up -d</code></pre>
 </doc-codeblock></div>
 <p>In this mode, you&#x27;ll have to check the logs of each container manually using e.g.:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -344,11 +344,11 @@ cd cbioportal-docker-compose</code></pre>
 </doc-anchor-target>
 <p>To import studies you can run:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">docker-compose run cbioportal metaImport.py -u http://cbioportal:8080 -s study/lgg_ucsf_2014/ -o</code></pre>
+<pre class="language-none"><code v-pre class="language-none">docker compose run cbioportal metaImport.py -u http://cbioportal:8080 -s study/lgg_ucsf_2014/ -o</code></pre>
 </doc-codeblock></div>
 <p>This will import the <a href="https://www.cbioportal.org/patient?studyId=lgg_ucsf_2014">lgg_ucsf_2014 study</a> into your local database. It will take a few minutes to import. After importing, restart the cbioportal web container:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">docker-compose restart cbioportal</code></pre>
+<pre class="language-none"><code v-pre class="language-none">docker compose restart cbioportal</code></pre>
 </doc-codeblock></div>
 <p>or</p>
 <p>All public studies can be downloaded from <a href="https://www.cbioportal.org/datasets">https://www.cbioportal.org/datasets</a>, or <a href="https://github.com/cBioPortal/datahub/">https://github.com/cBioPortal/datahub/</a>. You can add any of them to the <code v-pre>./study</code> folder and import them. There&#x27;s also a script (<code v-pre>./study/init.sh</code>) to download multiple studies. You can set <code v-pre>DATAHUB_STUDIES</code> to any public study id (e.g. <code v-pre>lgg_ucsf_2014</code>) and run <code v-pre>./init.sh</code>.</p>

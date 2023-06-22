@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740767047783">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740770732298">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -14,28 +14,28 @@
     <meta name="description" content="cBioPortal consists of the following components:" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/architecture-overview/" />
+    <link rel="canonical" href="https://docs.cbioportal.org/architecture-overview/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/architecture-overview/">
+    <meta property="og:url" content="https://docs.cbioportal.org/architecture-overview/">
     <meta property="og:title" content="Architecture Overview">
     <meta property="og:description" content="cBioPortal consists of the following components:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/architecture-overview/">
+    <meta property="twitter:url" content="https://docs.cbioportal.org/architecture-overview/">
     <meta property="twitter:title" content="Architecture Overview">
     <meta property="twitter:description" content="cBioPortal consists of the following components:">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../images/cbio-logo.png" rel="icon" />
-    <link href="../resources/css/retype.css?v=3.0.3.740767047783" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=3.0.3.740770732298" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=3.0.3.740767047783" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=3.0.3.740770732298" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.3.740767047783" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.3.740770732298" data-turbo-eval="false" defer></script>
 
     <link rel="stylesheet" href="/static/custom.css"></link>
 </head>
@@ -247,15 +247,24 @@
 </doc-anchor-target>
 <p>cBioPortal consists of the following components:</p>
 <ul>
-<li><a href="https://github.com/cBioPortal/cbioportal">backend</a> written in Java</li>
-<li>MySQL database that the backend uses</li>
+<li><a href="https://github.com/cBioPortal/cbioportal">backend</a>
+<ul>
+<li>MySQL database</li>
+<li>REST API written in Java Spring</li>
+<li>Redis cache for storing frequently used queries (optional)</li>
+</ul>
+</li>
 <li><a href="https://github.com/cBioPortal/cbioportal/tree/master/core/src/main/scripts/importer">validator</a>
-which checks file formats before importing data into the database</li>
+checks file formats before importing data into the database</li>
 <li><a href="https://github.com/cBioPortal/cbioportal-frontend">frontend</a>
 built with React, Mobx and Bootstrap</li>
 <li><a href="https://github.com/cBioPortal/session-service">session service</a> for storing
-user saved data such as virtual studies and groups</li>
-<li>Mongo database which session service uses</li>
+user saved data such as virtual studies and groups
+<ul>
+<li>REST API written in Java Spring enabling retrieval and writing to the database</li>
+<li>MongoDB database</li>
+</ul>
+</li>
 <li>cBioPortal also uses the APIs from various <doc-anchor-trigger to="#external-services">external services</doc-anchor-trigger> to provide more information about a variant</li>
 </ul>
 <doc-anchor-target id="backend">
@@ -268,7 +277,8 @@ user saved data such as virtual studies and groups</li>
 connects to a MySQL database to serve a REST API following the OpenAPI
 specification (<a href="https://www.cbioportal.org/api/">https://www.cbioportal.org/api/</a>). Note that the repo where this
 lives in (<a href="https://github.com/cBioPortal/cbioportal">https://github.com/cBioPortal/cbioportal</a>) also contains Java classes
-to import data as well as the validator.</p>
+to import data as well as the validator. The backend can be configured to
+connect to a Redis cache to store database query results for improved performance.</p>
 <p>The backend is organized as a multi-module Maven project.
 See <a href="../backend-code-organization/">cBioPortal backend code organization</a>.</p>
 <doc-anchor-target id="validator">
