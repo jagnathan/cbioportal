@@ -35,8 +35,10 @@ public class MatchMinerController {
     @RequestMapping(value = "/**", produces = "application/json")
     public ResponseEntity<Object> proxy(@RequestBody(required = false) JSONObject body, HttpMethod method, HttpServletRequest request) {
         try {
-            String path = request.getPathInfo().replace("/matchminer", "");
-            URI uri = new URI(this.url + path);
+            String path = request.getRequestURI();
+            int mmindex = path.indexOf("/matchminer"); 
+            String requestpath = path.substring(mmindex+11);
+            URI uri = new URI(this.url + requestpath);
 
             HttpHeaders httpHeaders = new HttpHeaders();
             String contentType = request.getHeader("Content-Type");
