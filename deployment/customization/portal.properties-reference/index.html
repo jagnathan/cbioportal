@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744389788720">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747529496059">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.1.0">
+    <meta name="generator" content="Retype 3.3.0">
 
     <!-- Primary Meta Tags -->
     <title>More portal.properties Settings</title>
@@ -33,13 +33,14 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../images/cbio-logo.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.1.0.744389788720" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.3.0.747529496059" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.744389788720" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.744389788720" data-turbo-eval="false" defer></script>
-    <link href="../../../resources/css/katex.css?v=3.1.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.1.0" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.3.0.747529496059" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.3.0.747529496059" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.3.0.747529496059" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.3.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.3.0" defer></script>
 
     <link rel="stylesheet" href="/static/custom.css"></link>
 </head>
@@ -239,7 +240,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="more-portalproperties-settings" class="break-words">
     <h1>
@@ -257,15 +257,20 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">db.user=
 db.password=
-db.host=[e.g. localhost to connect via socket, or e.g. 127.0.0.1:3307 to connect to a different port like 3307. Used by Java data import layer]
-db.portal_db_name=[the database name in mysql, e.g. cbiodb]
+db.connection_string=
 db.driver=[this is the name of your JDBC driver, e.g., com.mysql.jdbc.Driver]</code></pre>
 </doc-codeblock></div>
-<p>Include <code v-pre>db_connection_string</code> with the format specified below, and replace <code v-pre>localhost</code> by the value of <code v-pre>db.host</code>:</p>
+<p>The format of the <code v-pre>db.connection_string</code> is:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">db.connection_string=jdbc:mysql://localhost/</code></pre>
+<pre class="language-none"><code v-pre class="language-none">jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database name&gt;?&lt;parameter1&gt;&amp;&lt;parameter2&gt;&amp;&lt;parameter...&gt;</code></pre>
 </doc-codeblock></div>
-<p>db.tomcat_resource_name is required in order to work with the tomcat database connection pool and should have the default value jdbc/cbioportal in order to work correctly with the your WAR file.</p>
+<p>For example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">jdbc:mysql://localhost:3306/cbiodb?zeroDateTimeBehavior=convertToNull&amp;useSSL=false</code></pre>
+</doc-codeblock></div>
+<p><span class="docs-emoji">&#x26A0;&#xFE0F;</span> The fields <code v-pre>db.host</code> and <code v-pre>db.portal_db_name</code> and <code v-pre>db.use_ssl</code> are deprecated. It is required to configure the database connection using
+the <code v-pre>db.connection_string</code> instead.</p>
+<p><code v-pre>db.tomcat_resource_name</code> is required in order to work with the tomcat database connection pool and should have the default value jdbc/cbioportal in order to work correctly with the your WAR file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">db.tomcat_resource_name=jdbc/cbioportal</code></pre>
 </doc-codeblock></div>
@@ -355,6 +360,8 @@ skin.right_nav.show_whats_new=
 #Twitter feed in What's New section
 skin.right_nav.show_twitter=</code></pre>
 </doc-codeblock></div>
+<p>#Interactive tours section
+skin.right_nav.show_web_tours=</p>
 <doc-anchor-target id="control-the-content-of-specific-sections">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#control-the-content-of-specific-sections">#</doc-anchor-trigger>
@@ -398,6 +405,17 @@ skin.right_nav.show_twitter=</code></pre>
 <p>Different samples of a patient may have been analyzed with different gene panels. In patient view mutations and discrete CNA&#x27;s can be filtered based on whether the gene of respective mutations/CNA&#x27;s was profiled in all samples of the patient (mutations profiled in <code v-pre>all samples</code>), or not (mutations profiled in <code v-pre>any sample</code>). Setting this field to <code v-pre>true</code> will make patient view select the <code v-pre>all samples</code> filter at startup. When set to false or left blank the patient view will default to the <code v-pre>any samples</code> filter setting.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">skin.patientview.filter_genes_profiled_all_samples=</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="control-default-settings-of-the-vaf-line-chart-in-the-genomic-evolution-tab-of-patient-view">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#control-default-settings-of-the-vaf-line-chart-in-the-genomic-evolution-tab-of-patient-view">#</doc-anchor-trigger>
+        <span>Control default settings of the VAF line chart in the genomic evolution tab of patient view</span>
+    </h3>
+</doc-anchor-target>
+<p>If you want to enable log scale and sequential mode by default, set this property to <code v-pre>true</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">vaf.log_scale.default=true|false
+vaf.sequential_mode.default=true|false</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="control-unauthorized-studies-to-be-displayed-on-the-home-page">
     <h3>
@@ -465,6 +483,23 @@ skin.right_nav.show_twitter=</code></pre>
 skin.patient_view.mutation_table.columns.show_on_init=
 skin.patient_view.copy_number_table.columns.show_on_init=
 skin.patient_view.structural_variant_table.columns.show_on_init=</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="define-custom-sample-type-colors">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#define-custom-sample-type-colors">#</doc-anchor-trigger>
+        <span>Define custom sample type colors</span>
+    </h3>
+</doc-anchor-target>
+<p>Define the colors of custom sample types in the patient view using a json object with for each sample type a color:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">skin.patient_view.custom_sample_type_colors_json=classpath:/skin-patient-view-custom-sample-type-colors.json</code></pre>
+</doc-codeblock></div>
+<p>Example of json file contents:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;Primary&quot;: &quot;green&quot;,
+    &quot;Biopsy 3&quot;: &quot;#00c040ff&quot;
+}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="choose-the-display-name-for-authenticated-users">
     <h3>
@@ -696,6 +731,10 @@ oncoprint.custom_driver_annotation.tiers.default=true|false</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">oncoprint.oncokb.default=true|false
 oncoprint.hotspots.default=true|false</code></pre>
+</doc-codeblock></div>
+<p>If you want to enable oncoprint heatmap clustering by default, set this property to <code v-pre>true</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">oncoprint.clustered.default=true|false</code></pre>
 </doc-codeblock></div>
 <p><strong>Automatic hiding of variants of unknown significance (VUS)</strong></p>
 <p>By default, the selection box to hide VUS mutations is unchecked. If you want to automatically hide VUS, set this property to <code v-pre>true</code>. Default is <code v-pre>false</code>.</p>
@@ -1134,6 +1173,6 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "More portal.properties Settings", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "More portal.properties Settings", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true }</script>
 </body>
 </html>
