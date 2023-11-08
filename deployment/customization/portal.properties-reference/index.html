@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747529496059">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752801171887">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.3.0">
+    <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
     <title>More portal.properties Settings</title>
@@ -33,14 +33,14 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../images/cbio-logo.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.3.0.747529496059" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752801171887" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.3.0.747529496059" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.3.0.747529496059" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.3.0.747529496059" defer></script>
-    <link href="../../../resources/css/katex.css?v=3.3.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.3.0" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752801171887" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752801171887" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.752801171887" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
 
     <link rel="stylesheet" href="/static/custom.css"></link>
 </head>
@@ -388,9 +388,10 @@ skin.right_nav.show_web_tours=</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">skin.right_nav.whats_new_blurb=</code></pre>
 </doc-codeblock></div>
-<p>Add a custom logo in the right side of the menu. Place here the full name of the logo file (e.g. <code v-pre>logo.png</code>). This file should be saved in <code v-pre>$PORTAL_HOME/portal/images/</code>.</p>
+<p>Add custom logos to the left or right side of the header section. Place here the full name of the logo file (e.g. <code v-pre>logo.png</code>). This file should be present in <code v-pre>$PORTAL_HOME/portal/images/</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">skin.right_logo=</code></pre>
+<pre class="language-none"><code v-pre class="language-none">skin.left_logo=
+skin.right_logo=</code></pre>
 </doc-codeblock></div>
 <p>Prevent users from saving data by removing all Download tabs and download and copy-to-clipboard controls.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -543,6 +544,20 @@ survival.initial_x_axis_limit=</code></pre>
 <pre class="language-none"><code v-pre class="language-none">installation_map_url=https://installationmap.netlify.app/</code></pre>
 </doc-codeblock></div>
 <p>To set up an installation map instance, one may consult the source code for the installation map <a href="https://github.com/cbioportal/installation-map">here</a>.</p>
+<doc-anchor-target id="show-structural-variants-table-on-study-view">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#show-structural-variants-table-on-study-view">#</doc-anchor-trigger>
+        <span>Show structural variants table on study view</span>
+    </h3>
+</doc-anchor-target>
+<p>The structural variants table widget on study view allows users to define cohorts based on gene-orientation specific structural variant data format (see <a href="../../../file-formats/#structural-variant-data">here</a>).
+The structural variants table widget supports cohort selection based on <em>gene1</em>, <em>gene2</em> and <em>gene1/gene2</em> orientation specific genomic events.
+This property enables the structural variants table widget on Study View.</p>
+<p><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Although <em>gene1</em> and <em>gene2</em> specific queries may be used to investigate up- and downstream fusion partners, respectively, the validity of this
+depends on supports for this interpretation in the underlying data.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">skin.study_view.show_sv_table=true</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="ensembl-transcript-lookup-url">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ensembl-transcript-lookup-url">#</doc-anchor-trigger>
@@ -1101,6 +1116,17 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
 </li>
 <li><code v-pre>acbc_mskcc_2015.tar.gz</code> resides <code v-pre>https://cbioportal-datahub.s3.amazonaws.com/acbc_mskcc_2015.tar.gz</code></li>
 </ul>
+<doc-anchor-target id="prioritized-studies-on-study-selector-view">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prioritized-studies-on-study-selector-view">#</doc-anchor-trigger>
+        <span>Prioritized studies on study selector view</span>
+    </h1>
+</doc-anchor-target>
+<p>By default, the studies loaded into a local cBioPortal instance are organized based on their cancer type (i.e. Breast &gt;&gt; Other).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">priority_studies=</code></pre>
+</doc-codeblock></div>
+<p>The value of this variable will create a custom category with studies on the top of the study selector view. The format for the string should be category1#study1a,study1b,study1c;category2#study2 (e.g., PanCancer Studies#msk_impact_2017), where the <code v-pre>category</code> can be any string and the <code v-pre>study</code> should be the study ID of the required uploaded study.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -1173,6 +1199,6 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "More portal.properties Settings", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "More portal.properties Settings", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
