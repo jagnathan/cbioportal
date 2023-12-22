@@ -7,7 +7,7 @@ import org.cbioportal.model.PatientTreatmentRow;
 import org.cbioportal.model.SampleTreatmentRow;
 import org.cbioportal.model.ClinicalEventKeyCode;
 import org.cbioportal.service.TreatmentService;
-import org.cbioportal.web.config.annotation.PublicApi;
+import org.cbioportal.web.config.annotation.InternalApi;
 import org.cbioportal.web.parameter.*;
 import org.cbioportal.web.util.StudyViewFilterApplier;
 import org.cbioportal.web.util.StudyViewFilterUtil;
@@ -30,7 +30,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-@PublicApi
+@InternalApi
 @RestController
 @Validated
 @Api(tags = "Treatments", description = " ")
