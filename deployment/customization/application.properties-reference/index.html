@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEJSRG35RS"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-HEJSRG35RS');</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758736834136">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.808007075734">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.5.0">
+    <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
     <title>More application.properties Settings</title>
     <meta name="title" content="More application.properties Settings">
-    <meta name="description" content="This page describes the main properties within application.properties.">
+    <meta name="description" content="This page describes the main properties within application.properties. Note that auth-related properties can be found in ">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.cbioportal.org/deployment/customization/application.properties-reference/">
@@ -20,27 +23,27 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.cbioportal.org/deployment/customization/application.properties-reference/">
     <meta property="og:title" content="More application.properties Settings">
-    <meta property="og:description" content="This page describes the main properties within application.properties.">
+    <meta property="og:description" content="This page describes the main properties within application.properties. Note that auth-related properties can be found in ">
     <meta property="og:image" content="https://docs.cbioportal.org/images/previews/quick_search_example.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.cbioportal.org/deployment/customization/application.properties-reference/">
     <meta property="twitter:title" content="More application.properties Settings">
-    <meta property="twitter:description" content="This page describes the main properties within application.properties.">
+    <meta property="twitter:description" content="This page describes the main properties within application.properties. Note that auth-related properties can be found in ">
     <meta property="twitter:image" content="https://docs.cbioportal.org/images/previews/quick_search_example.png">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../images/cbio-logo.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.758736834136" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.9.0.808007075734" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.758736834136" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.758736834136" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.758736834136" defer></script>
-    <link href="../../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.5.0" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.9.0.808007075734" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.9.0.808007075734" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.9.0.808007075734" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.9.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.9.0" defer></script>
 
     <link rel="stylesheet" href="/static/custom.css"></link>
 </head>
@@ -62,7 +65,7 @@
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../../images/cbio-logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../images/cbio-logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">cBioPortal Docs</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">cBioPortal Docs</span>
                         </a>
                     </div>
         
@@ -83,7 +86,7 @@
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/cbioportal/cbioportal/">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
-                                            <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
                                         </g>
                                     </svg>
                                     <span>Github</span>
@@ -107,6 +110,16 @@
                                         </g>
                                     </svg>
                                     <span>Google Group</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../donate/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M14 20.408c-.492.308-.903.546-1.192.709-.153.086-.308.17-.463.252h-.002a.75.75 0 0 1-.686 0 16.709 16.709 0 0 1-.465-.252 31.147 31.147 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31.146 31.146 0 0 1 14 20.408Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Donate</span>
                                 </a>
                             </li>
         
@@ -151,9 +164,8 @@
     
         <div class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
@@ -193,7 +205,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/cbioportal/cbioportal/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                                 <g fill="currentColor">
-                                                    <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                                    <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
                                                 </g>
                                             </svg>
                                             <span>Github</span>
@@ -217,6 +229,16 @@
                                                 </g>
                                             </svg>
                                             <span>Google Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../donate/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M14 20.408c-.492.308-.903.546-1.192.709-.153.086-.308.17-.463.252h-.002a.75.75 0 0 1-.686 0 16.709 16.709 0 0 1-.465-.252 31.147 31.147 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31.146 31.146 0 0 1 14 20.408Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Donate</span>
                                         </a>
                                     </li>
             
@@ -247,7 +269,7 @@
         <span>More application.properties Settings</span>
     </h1>
 </doc-anchor-target>
-<p>This page describes the main properties within application.properties.</p>
+<p>This page describes the main properties within application.properties. Note that auth-related properties can be found in <a href="../security.properties-reference/">security.properties-Reference</a>.</p>
 <doc-anchor-target id="database-settings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database-settings">#</doc-anchor-trigger>
@@ -298,6 +320,16 @@ skin.show_tools_tab=
 skin.show_about_tab=</code></pre>
 </doc-codeblock></div>
 <p><strong>Note:</strong> <code v-pre>skin.show_tools_tab</code> refers to the <code v-pre>Visualize Your Data</code> tab, while <code v-pre>skin.show_data_tab</code> refers to the <code v-pre>Data Sets</code> tab.</p>
+<doc-anchor-target id="show-donate-button">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#show-donate-button">#</doc-anchor-trigger>
+        <span>Show donate button</span>
+    </h3>
+</doc-anchor-target>
+<p>We kindly ask for your support by enabling the “Donate” button on your portals to help fund our mission. The button will direct users to <a href="https://docs.cbioportal.org/donate/">https://docs.cbioportal.org/donate/</a>, where they can learn more about how the funding is utilized. You can activate it through:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">skin.show_donate_button=true</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="cross-cancer-study-query-default">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cross-cancer-study-query-default">#</doc-anchor-trigger>
@@ -327,7 +359,7 @@ default_cross_cancer_study_list_name=</code></pre>
     </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="../../../images/previews/quick_search_example.png" alt="Quick search example">
+    <img src="../../../images/previews/quick_search_example.png" alt="Quick search example" />
     <figcaption class="caption">Quick search example</figcaption>
 </figure>
 </p>
@@ -397,6 +429,22 @@ skin.right_logo=</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">skin.hide_download_controls=</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="quick-select-buttons">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-select-buttons">#</doc-anchor-trigger>
+        <span>Quick select buttons</span>
+    </h3>
+</doc-anchor-target>
+<p>This feature allows you to generate a Quick Select button on the top of your query page. The button, when clicked on, will automatically select the studies mentioned after the &#x27;#&#x60;.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">skin.quick_select_buttons=</code></pre>
+</doc-codeblock></div>
+<p>The format for the string should be <code v-pre>&lt;Button name&gt;|&lt;Mouse-over text&gt;#study1a,study1b,....</code> where:</p>
+<ul>
+<li><code v-pre>&lt;Button name&gt;</code> will be the label on the button (for e.g. TCGA PanCancer Atlas Studies, Curated set of non-redundant studies)</li>
+<li><code v-pre>&lt;Mouse-over text&gt;</code> will be the text that is displayed when you hover over the button (for e.g. 218 studies that are manually curated including TCGA and non-TCGA studies with no overlapping samples)</li>
+<li><code v-pre>study1a,study1b,....</code> are the study IDs of the loaded studies that should be selected when the button is clicked. (for e.g. acbc_mskcc_2015,acc_tcga_pan_can_atlas_2018)</li>
+</ul>
 <doc-anchor-target id="control-default-setting-for-filtering-of-genes-in-mutation-and-cna-tables-of-patient-view">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#control-default-setting-for-filtering-of-genes-in-mutation-and-cna-tables-of-patient-view">#</doc-anchor-trigger>
@@ -485,6 +533,18 @@ skin.patient_view.mutation_table.columns.show_on_init=
 skin.patient_view.copy_number_table.columns.show_on_init=
 skin.patient_view.structural_variant_table.columns.show_on_init=</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="default-sort-columns-on-mutation-copy-number-and-structural-variant-tables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-sort-columns-on-mutation-copy-number-and-structural-variant-tables">#</doc-anchor-trigger>
+        <span>Default sort columns on Mutation, Copy-Number and Structural Variant Tables</span>
+    </h3>
+</doc-anchor-target>
+<p>Define the column that are going to sort be default in the Mutation, Copy-Number and Structural Variant Tables on the Patient View and the Mutation Table in the Results View.
+Column name should be exactly the same as shown in tables.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">skin.results_view.tables.default_sort_column=
+skin.patient_view.tables.default_sort_column=</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="define-custom-sample-type-colors">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#define-custom-sample-type-colors">#</doc-anchor-trigger>
@@ -501,16 +561,6 @@ skin.patient_view.structural_variant_table.columns.show_on_init=</code></pre>
     &quot;Primary&quot;: &quot;green&quot;,
     &quot;Biopsy 3&quot;: &quot;#00c040ff&quot;
 }</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="choose-the-display-name-for-authenticated-users">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#choose-the-display-name-for-authenticated-users">#</doc-anchor-trigger>
-        <span>Choose the display name for authenticated users</span>
-    </h3>
-</doc-anchor-target>
-<p>By default the display name for authenticated users is email, but it can be changed for the user name:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">skin.user_display_name=username</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="hide-p--and-q-values-in-survival-types-table">
     <h3>
@@ -731,10 +781,12 @@ can be changed with:</p>
 </ol>
 <p>These data formats are described in the <a href="../../../file-formats/#extended-maf-format">cBioPortal MAF specifications</a>.</p>
 <p><strong>Enabling custom annotations in the OncoPrint</strong></p>
-<p>To enable functionality for one or both types of custom annotations, enter values for the following properties. These labels will appear in the OncoPrint&#x27;s &quot;Mutation color&quot; menu.</p>
+<p>To enable functionality for one or both types of custom annotations, enter values for the following properties. These values will appear in the OncoPrint&#x27;s &quot;Mutation color&quot; menu, Patient View&#x27;s (mutation, CNA, SV) tables, Results View&#x27;s mutation table, and Group Comparison View&#x27;s mutation table.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">oncoprint.custom_driver_annotation.binary.menu_label=Custom driver annotation
-oncoprint.custom_driver_annotation.tiers.menu_label=Custom driver tiers</code></pre>
+<pre class="language-none"><code v-pre class="language-none">oncoprint.custom_driver_annotation.binary.menu_label=Custom Driver
+oncoprint.custom_driver_annotation.binary.menu_description=Custom driver tiers
+oncoprint.custom_driver_annotation.tiers.menu_label=Custom Driver Tiers
+oncoprint.custom_driver_annotation.tiers.menu_description=Custom driver tiers</code></pre>
 </doc-codeblock></div>
 <p><strong>Automatic selection of OncoKB, hotspots and custom annotations</strong></p>
 <p>OncoKB and Hotspots are by default automatically selected as annotation source, if <code v-pre>show.oncokb</code> and <code v-pre>show.hotspots</code> are set to <code v-pre>true</code>. To add automatic selection of custom driver or custom driver tiers annotations, set the respective property to <code v-pre>true</code>. Default is <code v-pre>false</code>.</p>
@@ -1127,6 +1179,28 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
 <pre class="language-none"><code v-pre class="language-none">priority_studies=</code></pre>
 </doc-codeblock></div>
 <p>The value of this variable will create a custom category with studies on the top of the study selector view. The format for the string should be category1#study1a,study1b,study1c;category2#study2 (e.g., PanCancer Studies#msk_impact_2017), where the <code v-pre>category</code> can be any string and the <code v-pre>study</code> should be the study ID of the required uploaded study.</p>
+<doc-anchor-target id="study-tag-functionality">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#study-tag-functionality">#</doc-anchor-trigger>
+        <span>Study Tag functionality</span>
+    </h2>
+</doc-anchor-target>
+<p>Study Tags allow portal maintainers to define miscellaneous descriptive meta data to studies, which will be shown to users in tooltips and are also searchable. This feature
+is on by default but can be disabled using the following property.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">//boolean
+enable_study_tags=true|false</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="add-custom-buttons-to-data-tables">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add-custom-buttons-to-data-tables">#</doc-anchor-trigger>
+        <span>Add Custom Buttons to data tables</span>
+    </h1>
+</doc-anchor-target>
+<p>Custom Buttons can be defined which will conditionally appear in all group comparison data tables (with CopyDownloadControls) to launch a custom URL. This can be used, for example, to launch a software application (that is installed on the user&#x27;s system) with the data. This configuration can also customize new elements on the Visualize page. It points to a JSON file. (See <a href="../download_custom_buttons-reference/">download_custom_buttons reference</a>).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">download_custom_buttons_json=classpath:custom_buttons/download_custom_button_avm.json</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -1140,7 +1214,7 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../deployment/customization/customizing-your-instance-of-cbioportal/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -1155,7 +1229,7 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../deployment/customization/security.properties-reference/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Application Properties</span>
+                                                <span class="block mt-1">Security Properties</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -1164,13 +1238,13 @@ The studies to be downloaded need to be compressed with the extension <code v-pr
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
